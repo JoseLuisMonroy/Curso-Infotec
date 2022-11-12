@@ -13,6 +13,9 @@ public class Estudiante{
     public Estudiante(Persona persona) {
         this.persona = persona;
     }
+    public Estudiante(Estudiante estudiante) {
+        this.persona = estudiante.persona;
+    }
     
 
     static Persona PersonaNull (Persona persona){
@@ -50,5 +53,10 @@ public class Estudiante{
     }
     public void setPersona(Persona persona) {
         this.persona = persona;
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre " + persona.getName() + ", Edad " + persona.getAge();
     }
 }
