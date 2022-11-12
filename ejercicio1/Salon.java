@@ -16,5 +16,8 @@ public class Salon{
         persona.setStudent(false);
         return persona;
     }
+    static String Concatenar (String string1, String strin2){
+        return string1 + "-" + strin2;
+    }
 
 }
