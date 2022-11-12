@@ -50,5 +50,4 @@ public class Persona{
     public void setStudent(boolean student) {
         isStudent = student;
     }
-
 }

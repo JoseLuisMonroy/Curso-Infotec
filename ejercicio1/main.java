@@ -9,7 +9,7 @@ public class main {
         compararHashcode(persona1, persona2);
         System.out.println(Estudiante.Concatenar("Hola", "Mundo"));
         System.out.println(estudiante1);
-        
+        compararAtributos(persona1, persona2);
 
     }
     public static void compararInstancias( Persona persona1, Persona persona2){
@@ -25,6 +25,39 @@ public class main {
         }else{
             persona2 = persona1;
             compararHashcode(persona1, persona2);
+        }
+    }
+    //Realiza un procedimiento que compare cada uno de los atributos de la Persona con otro Objeto del mismo tipo de forma optimizada
+    public static void compararAtributos(Persona persona1, Persona persona2){
+        boolean comparacion = true;
+        while (comparacion){
+            if (persona1.getName().equals(persona2.getName())){
+                if (persona1.getAge() == persona2.getAge()){
+                    if (persona1.getHeight() == persona2.getHeight()){
+                        if (persona1.getWeight() == persona2.getWeight()){
+                            if (persona1.isStudent() == persona2.isStudent()){
+                                System.out.println("Los atributos son iguales");
+                                comparacion = false;
+                            }else{
+                                System.out.println("Los atributos son diferentes");
+                                comparacion = false;
+                            }
+                        }else{
+                            System.out.println("Los atributos son diferentes");
+                            comparacion = false;
+                        }
+                    }else{
+                        System.out.println("Los atributos son diferentes");
+                        comparacion = false;
+                    }
+                }else{
+                    System.out.println("Los atributos son diferentes");
+                    comparacion = false;
+                }
+            }else{
+                System.out.println("Los atributos son diferentes");
+                comparacion = false;
+            }
         }
     }
 
