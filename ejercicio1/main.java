@@ -1,13 +1,15 @@
 public class main {
     public static void main(String[] args) {
         Persona persona1 = new Persona("Juan", 20, 1.80, 80, true);
-        Persona persona2 = new Persona("Pedro", 21, 1.70, 70, true);
+        Persona persona2 = new Persona(persona1);
         Estudiante estudiante1 = new Estudiante(persona1);
-        Estudiante estudiante2 = new Estudiante(persona2);
-        //imprimri atributos de estudiante1)
-        System.out.println("Nombre: " + estudiante1.getPersona().getName());
-        System.out.println("Edad: " + estudiante1.getPersona().getAge());
-        System.out.println("Altura: " + estudiante1.getPersona().getHeight());
+        Estudiante estudiante2 = new Estudiante(estudiante1);
+        System.out.println(estudiante1.getPersona().getName() + estudiante2.getPersona().getName());
+        compararInstancias(persona1, persona2);
+        compararHashcode(persona1, persona2);
+        System.out.println(Estudiante.Concatenar("Hola", "Mundo"));
+        System.out.println(estudiante1);
+        
 
     }
     public static void compararInstancias( Persona persona1, Persona persona2){
@@ -17,4 +19,13 @@ public class main {
             System.out.println("Las instancias son diferentes");
         }
     }
+    public static void compararHashcode( Persona persona1, Persona persona2){
+        if (persona1.hashCode() == persona2.hashCode()){
+            System.out.println("Los hashcode son iguales");
+        }else{
+            persona2 = persona1;
+            compararHashcode(persona1, persona2);
+        }
+    }
+
 }
