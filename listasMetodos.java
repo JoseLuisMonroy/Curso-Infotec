@@ -7,7 +7,8 @@ public class listasMetodos{
         for (int i = 0; i < cambaido.length; i++){
             System.out.println("Posicion " + i + ": " + cambaido[i] );
         }
-        
+        String[] strSuma = {"10", "30", "12", "60"};
+        System.out.println(ejercicio4(strSuma));
 
     }
     public static String ejercicio1 (String string1, String string2, Integer int1, Integer int2){
@@ -29,5 +30,11 @@ public class listasMetodos{
         }
         return arreglo;
     }
-
+    public static Integer ejercicio4 (String [] arreglo){
+        int suma = 0;
+        for (int i = 0; i < arreglo.length; i++){
+            suma += Integer.parseInt(arreglo[i]);
+        }
+        return suma;
+    }
 }
