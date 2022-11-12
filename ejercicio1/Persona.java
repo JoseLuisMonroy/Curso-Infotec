@@ -12,6 +12,14 @@ public class Persona{
         this.weight = weight;
         this.isStudent = isStudent;
     }
+    public Persona(Persona persona){
+        this.name = persona.name;
+        this.age = persona.age;
+        this.height = persona.height;
+        this.weight = persona.weight;
+        this.isStudent = persona.isStudent;
+    }
+
     public String getName() {
         return name;
     }
