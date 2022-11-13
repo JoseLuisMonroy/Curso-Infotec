@@ -45,4 +45,10 @@ public class Empleado implements Empleado_tipoS{
             System.out.println("El empleado " + this.nombre + " no puede realizar la actividad pues no se encuentra dentro de sus actividades planeadas");
         }
     }
+    public char getTipo(){
+        return this.tipo;
+    }
+    public String getNombre(){
+        return this.nombre;
+    }
 }
