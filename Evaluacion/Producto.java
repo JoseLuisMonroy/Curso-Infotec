@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Producto {
+public class Producto implements Producto_int{
     private String nombre;
     private int precio;
     private int cantidad;
@@ -18,7 +18,6 @@ public class Producto {
         int numero = (int)(Math.random()*tipoDisp+1);
         this.tipo = tiposDisp[numero];
         tipoDisp--;
-        //eliminar el numero del arreglo
         tiposDisp = Arrays.stream(tiposDisp).filter(x -> x != tiposDisp[numero]).toArray(Integer[]::new);
     }
     public void setCantidad(){
@@ -39,5 +38,15 @@ public class Producto {
     }
     public int getTipo(){
         return this.tipo;
+    }
+
+    public void vender(){
+        if(this.cantidad == 0){
+            System.out.println("No se puede vender un producto de tipo pues no tiene disponibilidad");
+        }
+        else{
+            this.cantidad--;
+            System.out.println("Compra realizada!");
+        }
     }
 }
