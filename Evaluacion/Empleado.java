@@ -10,33 +10,39 @@ public class Empleado implements Empleado_tipoS{
         this.edad = edad;
         this.antiguedad = antiguedad;
         this.tipo = tipo;
-        this.actividades = setActividades(tipo);
+        setActividades(tipo);
     }
 
-    public setActividades(char tipo){
-        String[] actividades;
-        if(tipo == '1'){
-            actividades = {"vender", "acomodar", "descansar", "sentarse", "recibirPago"};
-        }else if(tipo == '2'){
-            actividades = {"vender", "descansar", "correr", "recibirPago"};
+    public void setActividades(char tipo){
+        switch(tipo){
+            case '1':
+                this.actividades = new String[]{"vender", "acomodar", "descansar", "sentarse", "recibirPago"};
+                break;
+            case '2':
+                this.actividades = new String[]{"vender", "descansar", "correr", "recibirPago"};
+                break;
+            case '3':
+                this.actividades = new String[]{"recibirPago"};
+                break;
+            default:
+                System.out.println("Tipo de empleado no valido");
+            break;
         }
-        else{
-            actividades = {"recibirPago"};
-        }
-        return actividades;
     }
 
     public void recibirPago(int pago){
         System.out.println("El empleado " + this.nombre + " ha recibido su pago.");
     }
     public void realizarActividad(String actividad){
-        for(int i = 0; i < this.actividades.length; i++){
+        int i = 0;
+        for(i = 0 ; i < this.actividades.length; i++){
             if(this.actividades[i] == actividad){
+                System.out.println("El empleado " + this.nombre + " ha realizado la actividad " + actividad);
                 break;
             }
-            else{
-                System.out.println("La actividad " + actividad + " no se puede realizar porque no se encuentra dentro de las actividades del empleado ");
-            }
-        }    
+        }
+        if(i == this.actividades.length){
+            System.out.println("El empleado " + this.nombre + " no puede realizar la actividad pues no se encuentra dentro de sus actividades planeadas");
+        }
     }
 }
