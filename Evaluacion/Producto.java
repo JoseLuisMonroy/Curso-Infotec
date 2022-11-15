@@ -49,4 +49,9 @@ public class Producto implements Producto_int{
             System.out.println("Compra realizada!");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + ", precio: " + precio + ", tipo: " + tipo + " cantidad: " + cantidad; 
+    }
 }

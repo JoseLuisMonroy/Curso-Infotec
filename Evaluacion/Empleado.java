@@ -51,4 +51,9 @@ public class Empleado implements Empleado_tipoS{
     public String getNombre(){
         return this.nombre;
     }
+
+    @Override
+    public String toString(){
+        return "Nombre: " + this.nombre + " Edad: " + this.edad + " Antiguedad: " + this.antiguedad + " Tipo: " + this.tipo;
+    }
 }

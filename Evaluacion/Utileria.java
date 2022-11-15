@@ -43,6 +43,9 @@ public class Utileria{
                 break;
             }
         }
+        if (noDisponible == null){
+            System.out.println("Todos los productos estan disponibles");
+        }
         contador++;
         return noDisponible;
     }

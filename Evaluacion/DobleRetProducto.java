@@ -6,5 +6,11 @@ public class DobleRetProducto {
         this.Productos = Productos;
         this.costo = costo;
     }
+    public Producto[] getProducto(){
+        return this.Productos;
+    }
+    public int getCosto(){
+        return this.costo;
+    }
 
 }
