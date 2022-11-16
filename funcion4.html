@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de retorno</title>
+</head>
+<body>
+    <div >
+        <h1>Funcion 4</h1>
+        <h2> Retorno de valores</h2>
+        <h3>Definir una función llamada $ que reciba como parámetro el id de un elemento HTML y retorne la referencia del mismo.</h3>
+    </div>
+    <div id="datos">
+        <input type="text" id="idElemento" placeholder=' "idElemento" '><br>
+        <input type="button" value="Retornar valor" onclick="listaOrdenada(contenedor)">
+    </div>
+    <div id="contenedor">
+    </div>
+    <script>
+        //imprimir el valor del elemento
+        function $(idElemento){
+            return document.getElementById(idElemento);
+        }
+        function listaOrdenada(idDiv){
+            idDiv.innerHTML = "";
+            var arreglo = $("idElemento").value;
+            var arreglo = arreglo.split(",");
+            var lista = document.createElement("ol");
+            for(var i = 0; i < arreglo.length; i++){
+                var elemento = document.createElement("li");
+                elemento.innerHTML = arreglo[i];
+                lista.appendChild(elemento);
+            }
+            idDiv.appendChild(lista);
+        }
+    </script>
+</body>
+</html>
