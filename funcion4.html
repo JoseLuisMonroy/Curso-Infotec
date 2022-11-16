@@ -25,11 +25,11 @@
         }
         function listaOrdenada(idDiv){
             idDiv.innerHTML = "";
-            var arreglo = $("idElemento").value;
-            var arreglo = arreglo.split(",");
-            var lista = document.createElement("ol");
+            let arreglo = $("idElemento").value;
+            arreglo = arreglo.split(",");
+            let lista = document.createElement("ol");
             for(var i = 0; i < arreglo.length; i++){
-                var elemento = document.createElement("li");
+                let elemento = document.createElement("li");
                 elemento.innerHTML = arreglo[i];
                 lista.appendChild(elemento);
             }
