@@ -22,6 +22,11 @@
             var arreglo = document.getElementById("arreglo").value;
             var arreglo = arreglo.split(",");
             var lista = document.createElement("ol");
+            for(var i = 0; i < arreglo.length; i++){
+                var elemento = document.createElement("li");
+                elemento.innerHTML = arreglo[i];
+                lista.appendChild(elemento);
+            }
         }
     </script>
 </body>
