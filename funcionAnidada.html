@@ -7,6 +7,28 @@
     <title>Funciones anidadas</title>
 </head>
 <body>
-    
-</body>
+    <div>
+        <h1>Funciones anidadas</h1>
+        <h2>
+
+            Crea una función que reciba un parámetro y defina una variable local. 
+            Definir dentro de la función que acabamos de crear una función anidada que contenga un parámetro. 
+            En la función anidada imprimir el parámetro de la función que la contiene, el parámetro que tiene la función anidada y el valor de la variable local de la función principal.</h2>
+    </div>
+    <div id="datos">
+        <input type="button" value="Retornar valor" onclick="funcion(contenedor)">
+    </div>
+    <div id="contenedor">
+    </div>
+    <script>
+        function funcion(idDiv){
+            let variableLocal = "Variable local";
+            function funcionAnidada(parametroAnidado){
+                idDiv.innerHTML = "Parametro de la funcion principal: " + idDiv + "<br>" + "Parametro de la funcion anidada: " + parametroAnidado + "<br>" + "Variable local: " + variableLocal;
+            }
+            funcionAnidada("Parametro anidado");
+        }
+    </script>
+
+    </body>
 </html>
