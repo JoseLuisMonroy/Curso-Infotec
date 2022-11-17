@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones con vales por defecto</title>
+</head>
+<body>
+    <div>
+        <h1>Funciones con valores por defecto</h1>
+        <h2>
+            Confeccionar una función que reciba un vector y el tipo de lista HTML que se debe generar. Por defecto generar una lista no ordenada. 
+            Retornar una cadena con la lista HTML generada
+        </h2>
+    </div>
+    <div id="datos">
+        <input type="text" id="idElemento" placeholder=' "Dato1", "Dato2", "DatoN" '><br>
+        <input type="button" value="Retornar valor" onclick="toArray(idElemento,)">
+    </div>
+    <div id="contenedor">
+    </div>
+    <script>
+        function funcion(arreglo, idDiv = "contenedor", tipoLista = "ul"){
+            contenedor.innerHTML = "";
+            let lista = document.createElement(tipoLista);
+            for(var i = 0; i < arreglo.length; i++){
+                let elemento = document.createElement("li");
+                elemento.innerHTML = arreglo[i];
+                lista.appendChild(elemento);
+            }
+            imprimir(lista);
+        }
+        function toArray(IdElemento){
+            let arreglo = idElemento.value;
+            arreglo = arreglo.split(",");
+            funcion(arreglo);
+        }
+        function imprimir(arreglo){
+            contenedor.appendChild(arreglo);
+        }
+    </script>    
+</body>
+</html>
