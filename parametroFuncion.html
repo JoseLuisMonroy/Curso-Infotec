@@ -12,11 +12,46 @@
         <h2>Crear una función que reciba como parámetro tres variables, donde la tercera es una funcion.</h2>
     </div>
     <div id="datos">
-        <input type="button" value="Retornar valor" onclick="funcion(contenedor)">
+        <input type = "text" id = "idElemento" placeholder = ' "Numero1, Numero2, Operador" '><br>
+        <input type="button" value="Retornar valor" onclick="Sum(getOperator(idElemento), getValores(idElemento)[0], getValores(idElemento)[1] )">
     </div>
     <div id="contenedor">
     </div>
     <script>
+        function Sum(operador,  numero1, numero2){
+            let resultado;
+            numero1 = parseInt(numero1);
+            numero2 = parseInt(numero2);
+            switch(operador){
+                case "+":
+                    resultado = numero1 + numero2;
+                    break;
+                case "-":
+                    resultado = numero1 - numero2;
+                    break;
+                case "*":
+                    resultado = numero1 * numero2;
+                    break;
+                case "/":
+                    resultado = numero1 / numero2;
+                    break;
+                default:
+                    resultado = "Operador no valido";
+                    break;
+            }
+            contenedor.innerHTML = resultado;
+        }
+        function getValores(datosUser){
+            let arreglo = datosUser.value;
+            arreglo = arreglo.split(",");
+            return arreglo;
+        }
+        function getOperator(datosUser){
+            let arreglo = datosUser.value;
+            arreglo = arreglo.split(",");
+            let operador = arreglo[2];
+            return operador;
+        }
     </script>
 </body>
 </html>
