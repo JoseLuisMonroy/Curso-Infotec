@@ -12,12 +12,22 @@
         <h2>Ordenar un vector de enteros mediante el método sort, pasar una arrow function.</h2>
     </div>
     <div id="datos">
-        <input type = "text" id = "idProblema1" placeholder = ' "Numero1, Numero2, NumeroN" '><br>
-        <input type="button" value="Retornar valor" onclick="ordenar(idProblema1)">
+        <p> Porfavor introduzca su vector de enteros separados por una coma</p>
+        <input type = "text" id = "idProblema1" placeholder = ' Numero1, Numero2, NumeroN '><br>
+        <input type="button" value="Ordenar vector" onclick="ordenar(getVector(idProblema1))">
     </div>
     <div id="problema1">
     </div>
     <script>
+        function ordenar(vector){
+            vector.sort((a, b) => a - b);
+            problema1.innerHTML = "El vector arreglado es :"  + vector;
+        }
+        function getVector(datosUser){
+            let arreglo = datosUser.value;
+            arreglo = arreglo.split(",");
+            return arreglo;
+        }
     </script>
 </body>
 </html>
