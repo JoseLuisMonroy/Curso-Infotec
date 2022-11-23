@@ -11,12 +11,22 @@
         <h1>Problemas de vetctores</h1>
         <h2>Ordenar un vector de enteros mediante el método sort, pasar una arrow function.</h2>
     </div>
-    <div id="datos">
+    <div>
         <p> Porfavor introduzca su vector de enteros separados por una coma</p>
         <input type = "text" id = "idProblema1" placeholder = ' Numero1, Numero2, NumeroN '><br>
         <input type="button" value="Ordenar vector" onclick="ordenar(getVector(idProblema1))">
     </div>
     <div id="problema1">
+    </div>
+    <div>
+        <h2>Definir un vector con un conjunto de elementos. Generar un nuevo vector llamando al método filter pasando una función de flecha para definir cuáles rescatar. .</h2>
+    </div>
+    <div>
+        <p> Porfavor introduzca su vector de enteros separados por una coma</p>
+        <input type = "text" id = "idProblema2" placeholder = ' Numero1, Numero2, NumeroN '><br>
+        <input type="button" value="Ordenar vector" onclick="filtrar(getVector(idProblema2))">
+    </div>
+    <div id="problema2">
     </div>
     <script>
         function ordenar(vector){
@@ -27,6 +37,10 @@
             let arreglo = datosUser.value;
             arreglo = arreglo.split(",");
             return arreglo;
+        }
+        function filtrar(vector){
+            let vectorFiltrado = vector.filter((elemento) => elemento % 2 == 0);
+            problema2.innerHTML = "El vector filtrado inicial es :"  + vector + "<br>" + "El vector filtrado es :"  + vectorFiltrado;
         }
     </script>
 </body>
