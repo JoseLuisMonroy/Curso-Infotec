@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura de cliente</title>
+</head>
+<body>
+    <div>
+        <h1>Desarrollaremos una clase que represente un cliente de un banco</h1>
+    </div>
+    <div>
+        <p> Acciones a realizar</p>
+        <input type="button" value="Crear cliente por defecto" onclick="crearCliente()"><br>
+        <input type = "text" id = "idPagar" placeholder = 'Cantidad a pagar'><br>
+        <input type="button" value="Pagar" onclick="cliente1.pagar(idPagar)"><br>
+        <input type = "text" id = "idRetirar" placeholder = 'Cantidad a retirar'><br>
+        <input type = "button" value = "Extraer" onclick = "cliente1.extraer(idRetirar)">
+    </div>
+    <div id = "Informacion"></div>
+    <script>
+        let cliente1; 
+
+        const getVector = (id) => {
+            let vector = id.value.split(',');
+            return vector;
+        }
+
+        function Cliente(nombre, saldo){
+            this.nombre = nombre;
+            this.saldo = saldo;
+            this.mostrar = mostrar;
+            this.pagar = pagar;
+            this.extraer = extraer;
+        }
+        function mostrar(){
+            Informacion.innerHTML = `Nombre: ${this.nombre} <br> Saldo: ${this.saldo}`;
+        }
+        function pagar(cantidad){
+            let valor = parseInt(cantidad.value);
+            let saldoActual = parseInt(this.saldo);
+            this.saldo = saldoActual + valor;
+            this.mostrar();
+        }
+        function extraer(cantidad){
+            let valor = parseInt(cantidad.value);
+            let saldoActual = parseInt(this.saldo);
+            this.saldo = saldoActual - valor;
+            this.mostrar();
+        }
+        
+        function crearCliente(){
+            let nombre = prompt("Ingrese el nombre del cliente");
+            let saldo = prompt("Ingrese el saldo del cliente");
+            cliente1 = new Cliente(nombre, saldo);
+            cliente1.mostrar();
+        }
+        
+    </script>
+</body>
+</html>
