@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch OrdenamientoListasApplication",
+            "request": "launch",
+            "mainClass": "com.example.demo.OrdenamientoListasApplication"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-DemoApplication<demo>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
