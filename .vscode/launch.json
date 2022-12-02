@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Application",
+            "request": "launch",
+            "mainClass": "pl.codeleak.demos.sbt.Application"
+        },
+        {
+            "type": "java",
             "name": "Launch OrdenamientoListasApplication",
             "request": "launch",
             "mainClass": "com.example.demo.OrdenamientoListasApplication"
