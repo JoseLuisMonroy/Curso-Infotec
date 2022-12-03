@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TraductorApplication",
+            "request": "launch",
+            "mainClass": "com.example.demo.TraductorApplication"
+        },
+        {
+            "type": "java",
             "name": "Launch Application",
             "request": "launch",
             "mainClass": "pl.codeleak.demos.sbt.Application"
