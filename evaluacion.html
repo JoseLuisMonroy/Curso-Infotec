@@ -8,7 +8,7 @@
 </head>
     <body onload="mostrarArticulos()">
     <div>
-        <h1 class="Encabezado" >Administarcion de articulos</h1>
+        <h1 class="Encabezado" >Administracion de articulos</h1>
     </div>
     <div id="Informacion">
     </div>
@@ -146,6 +146,25 @@
             document.getElementById("Informacion").innerHTML = "";
             this.mostrarArticulos();
         }
-
+        function modificarArticulo(){
+            let codigo = document.getElementById("codigo").value;
+            let descripcion = document.getElementById("descripcion").value;
+            let precio = document.getElementById("precio").value;
+            let articulo = [codigo, descripcion, precio];
+            let existe = false;
+            for (let i = 0; i < articulos.length; i++) {
+                if (articulos[i][0] == codigo) {
+                    articulos[i][1] = descripcion;
+                    articulos[i][2] = precio;
+                    existe = true;
+                }
+            }
+            if (!existe) {
+                alert("El codigo no existe");
+                return;
+            }
+            document.getElementById("Informacion").innerHTML = "";
+            this.mostrarArticulos();
+        }
     </script>
 </html>
