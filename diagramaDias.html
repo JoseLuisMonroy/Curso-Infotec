@@ -19,11 +19,13 @@
             let dia = document.querySelector("#diaSemana").value;
             dia = dia.charAt(0).toUpperCase() + dia.slice(1).toLowerCase();
             let diaEncontrado = false;
-            for(let i=0; i<dias.length; i++){
+            let i = 0;
+            do{
                 if(dia == dias[i]){
                     diaEncontrado = true;
                 }
-            }
+                i++;
+            } while(i < dias.length && !diaEncontrado);
             if(diaEncontrado){
                 alert("El dia " + dia + " es laborable");
             } else {
