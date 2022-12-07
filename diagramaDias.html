@@ -14,7 +14,7 @@
     </div>
     <div class="Info"></div>
     <script>
-        let dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
+        let dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
         function chequearDia(){
             let dia = document.querySelector("#diaSemana").value;
             dia = dia.charAt(0).toUpperCase() + dia.slice(1).toLowerCase();
@@ -33,7 +33,10 @@
             }
         }
         function mostrarNumero(){
-            let numero = dias.length;
+            let numero = 0;
+            do{
+                numero++;
+            } while(numero < dias.length);
             document.querySelector(".Info").innerHTML = "Hay " + numero + " dias en la semana";
         }
     </script>
