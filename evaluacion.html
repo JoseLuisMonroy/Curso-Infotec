@@ -6,7 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evaluacion javaScript</title>
 </head>
-<body>
-    
-</body>
+    <body onload="mostrarArticulos()">
+    <div>
+        <h1 class="Encabezado" >Administarcion de articulos</h1>
+    </div>
+    <div id="Informacion">
+        <p>Tablas</p>
+    </div>
+    <div>
+    </div>
+    </body>
+    <script>
+        let articulos = [];
+
+        function mostrarArticulos(){
+            articulos[0] = [1, "papas", 10.55];
+            articulos[1] = [2, "manzanas", 12.1];
+            articulos[2] = [3, "melon", 52.3];
+            articulos[3] = [4, "cebollas", 17];
+            articulos[4] = [5, "calabaza", 20];
+            let acumulador = 0;
+            for(let i=0; i<5; i++){
+                acumulador += articulos[i];
+            }
+            let tabla = document.createElement("table");
+            tabla.border = "1";
+            let fila = document.createElement("tr");
+            let celda1 = document.createElement("th");
+            let celda2 = document.createElement("th");
+            let celda3 = document.createElement("th");
+            let texto1 = document.createTextNode("Codigo");
+            let texto2 = document.createTextNode("Descripcion");
+            let texto3 = document.createTextNode("Precio");
+            celda1.appendChild(texto1);
+            celda2.appendChild(texto2);
+            celda3.appendChild(texto3);
+            fila.appendChild(celda1);
+            fila.appendChild(celda2);
+            fila.appendChild(celda3);
+            tabla.appendChild(fila);
+            for (let i = 0; i < articulos.length; i++) {
+                let fila = document.createElement("tr");
+                let celda1 = document.createElement("td");
+                let celda2 = document.createElement("td");
+                let celda3 = document.createElement("td");
+                let texto1 = document.createTextNode(articulos[i][0]);
+                let texto2 = document.createTextNode(articulos[i][1]);
+                let texto3 = document.createTextNode(articulos[i][2]);
+                celda1.appendChild(texto1);
+                celda2.appendChild(texto2);
+                celda3.appendChild(texto3);
+                fila.appendChild(celda1);
+                fila.appendChild(celda2);
+                fila.appendChild(celda3);
+                tabla.appendChild(fila);
+            }
+            document.getElementById("Informacion").appendChild(tabla);
+
+        }
+    </script>
 </html>
