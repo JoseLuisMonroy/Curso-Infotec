@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segundo ejemplo de valores predefinidos</title>
+</head>
+<body>
+    <div>
+    <h1>Segundo ejemplo de valores predefinidos</h1>
+    <h2>Crear una función que muestre la tabla de multiplicar.
+        Si no llegan datos muestra por defecto la tabla del 2.
+        Por defecto se muestran 10 términos de la tabla salvo que se indique un valor en contrario.
+        La función debe tener 2 parámetros y ambos deben tener un valor por defecto.</h2>
+    </div>
+    <div id="datos">
+        <input type="text" id="idElemento" placeholder=' Numerode la tabla, n, terminos '><br>
+        <input type="button" value="Retornar valor" onclick="getTabla(idElemento,)">
+    </div>
+    <div id="contenedor">
+    </div>
+    <script>
+        function getTabla(IdElemento){
+            let arreglo = idElemento.value;
+            arreglo = arreglo.split(",");
+            if(arreglo == ""){
+                tabla();
+            }else {
+                tabla(arreglo[0], arreglo[1]);
+            }
+        }
+        function tabla(numero = 2, terminos = 10){
+            let tabla = document.createElement("table");
+            tabla.setAttribute("border", "1");
+            for(var i = 1; i <= terminos; i++){
+                let fila = document.createElement("tr");
+                let celda1 = document.createElement("td");
+                let celda2 = document.createElement("td");
+                let celda3 = document.createElement("td");
+                celda1.innerHTML = numero;
+                celda2.innerHTML = i;
+                celda3.innerHTML = numero * i;
+
+                fila.appendChild(celda1);
+                fila.appendChild(celda2);
+                fila.appendChild(celda3);
+                tabla.appendChild(fila);
+            }
+            imprimir(tabla);
+        }
+        function imprimir(arreglo){
+            contenedor.innerHTML = "";
+            contenedor.appendChild(arreglo);
+        }
+    </script>
+</body>
+</html>

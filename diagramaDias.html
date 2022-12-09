@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dias de la semana laborables</title>
+</head>
+<body onload="mostrarNumero()" >
+    <h1>Dias de la semana laborables</h1>
+    <div>
+        <input type="text" name="dia" id="diaSemana" placeholder="Dia de la semana a checar">
+        <button onclick="chequearDia()">Checar dia</button>
+    </div>
+    <div class="Info"></div>
+    <script>
+        let dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
+        function chequearDia(){
+            let dia = document.querySelector("#diaSemana").value;
+            dia = dia.charAt(0).toUpperCase() + dia.slice(1).toLowerCase();
+            let diaEncontrado = false;
+            let i = 0;
+            do{
+                if(dia == dias[i]){
+                    diaEncontrado = true;
+                }
+                i++;
+            } while(i < dias.length && !diaEncontrado);
+            if(diaEncontrado){
+                alert("El dia " + dia + " es laborable");
+            } else {
+                alert("El dia " + dia + " no es laborable");
+            }
+        }
+        function mostrarNumero(){
+            let numero = 0;
+            do{
+                numero++;
+            } while(numero < dias.length);
+            document.querySelector(".Info").innerHTML = "Hay " + numero + " dias en la semana";
+        }
+    </script>
+</body>
+</html>

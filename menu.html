@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase menu</title>
+</head>
+<body>
+    <div id="menu"></div>
+    <div>
+        <h1>Plantear una clase llamada Menú que administre una lista de enlaces</h1>
+        <p>Definir como atributos dos vectores paralelos que almacenen en uno la 'url' y en el otro la 'descripción' de dicho enlace.</p>
+        <p> Permitir insertar enlaces y finalmente mediante un método que le pasamos el 'id' de un elemento HTML proceda a crearlo al menú.</p>
+    </div>
+    <div>
+        <input type="text" id="url" placeholder="Url">
+        <input type="text" id="descripcion" placeholder="Descripcion">
+        <input type="button" value="Agregar" onclick="agregar()">
+    </div>
+    <script>
+        class Menu{
+            constructor(url, descripcion){
+                this.url = url;
+                this.descripcion = descripcion;
+            }
+            crearMenu(){
+                let menu = document.getElementById('menu');
+                let ul = document.createElement('ul');
+                for(let i = 0; i < this.url.length; i++){
+                    let li = document.createElement('li');
+                    let a = document.createElement('a');
+                    a.setAttribute('href', this.url[i]);
+                    a.innerHTML = this.descripcion[i];
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                }
+                menu.innerHTML = "";
+                menu.appendChild(ul);
+            }
+        }
+        let url = ['https://www.google.com', 'https://www.youtube.com', 'https://www.facebook.com'];
+        let descripcion = ['Google', 'Youtube', 'Facebook'];
+        let menu = new Menu(url, descripcion);
+        menu.crearMenu();
+        function agregar(){
+            let url = document.getElementById('url').value;
+            let descripcion = document.getElementById('descripcion').value;
+            menu.url.push(url);
+            menu.descripcion.push(descripcion);
+            menu.crearMenu();
+        }
+    </script>
+</body>
+</html>

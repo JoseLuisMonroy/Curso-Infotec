@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<body>
+    <div>
+        <h1> Cargar un string por teclado y luego llamar a los distintos métodos de la clase String y la propiedad length.</h1>
+    </div>
+    <div>
+        <input type="text" id="string">
+        <button onclick="cargarString()">Cargar</button>
+    </div>
+    <div id = "Informacion">
+    </div>
+    <script>
+        let stringIngresado = document.getElementById("stringIngresado");
+        let string = document.getElementById("string");
+        function cargarString(){
+            let parrafo = document.createElement("p");
+            let nodoTexto = document.createTextNode("El string ingresado es: " + string.value);
+            parrafo.appendChild(nodoTexto);
+            Informacion.appendChild(parrafo);
+            let parrafo2 = document.createElement("p");
+            let nodoTexto2 = document.createTextNode("La longitud del string es: " + string.value.length);
+            parrafo2.appendChild(nodoTexto2);
+            Informacion.appendChild(parrafo2);
+            let parrafo3 = document.createElement("p");
+            let nodoTexto3 = document.createTextNode("El string en mayuscula es: " + string.value.toUpperCase());
+            parrafo3.appendChild(nodoTexto3);
+            Informacion.appendChild(parrafo3);
+            let parrafo4 = document.createElement("p");
+            let nodoTexto4 = document.createTextNode("El string en minuscula es: " + string.value.toLowerCase());
+            parrafo4.appendChild(nodoTexto4);
+            Informacion.appendChild(parrafo4);
+            //mostrar el caracter que se repite mas veces
+            let parrafo5 = document.createElement("p");
+            let nodoTexto5 = document.createTextNode("El caracter que se repite mas veces es: " + string.value.charAt(masRepetido(string.value)));
+            parrafo5.appendChild(nodoTexto5);
+            Informacion.appendChild(parrafo5);
+            //mostrar la cantidad de veces que se repite el caracter que se repite mas veces
+            let parrafo6 = document.createElement("p");
+            let nodoTexto6 = document.createTextNode("La cantidad de veces que se repite el caracter que se repite mas veces es: " + cantidadRepetido(string.value));
+            parrafo6.appendChild(nodoTexto6);
+            Informacion.appendChild(parrafo6);
+        }
+        function masRepetido(string){
+            let contador = 0;
+            let contadorMax = 0;
+            let posicion = 0;
+            for(let i = 0; i < string.length; i++){
+                for(let j = 0; j < string.length; j++){
+                    if(string.charAt(i) == string.charAt(j)){
+                        contador++;
+                    }
+                }
+                if(contador > contadorMax){
+                    contadorMax = contador;
+                    posicion = i;
+                }
+                contador = 0;
+            }
+            return posicion;
+        }
+        function cantidadRepetido(string){
+            let contador = 0;
+            let contadorMax = 0;
+            let posicion = 0;
+            for(let i = 0; i < string.length; i++){
+                for(let j = 0; j < string.length; j++){
+                    if(string.charAt(i) == string.charAt(j)){
+                        contador++;
+                    }
+                }
+                if(contador > contadorMax){
+                    contadorMax = contador;
+                    posicion = i;
+                }
+                contador = 0;
+            }
+            return contadorMax;
+        }
+        
+    </script>
+</body>
+</html>

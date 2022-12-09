@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problemas de vectores</title>
+</head>
+<body>
+    <div>
+        <h1>Problemas de vetctores</h1>
+        <h2>Ordenar un vector de enteros mediante el método sort, pasar una arrow function.</h2>
+    </div>
+    <div>
+        <p> Porfavor introduzca su vector de enteros separados por una coma</p>
+        <input type = "text" id = "idProblema1" placeholder = ' Numero1, Numero2, NumeroN '><br>
+        <input type="button" value="Ordenar vector" onclick="ordenar(getVector(idProblema1))">
+    </div>
+    <div id="problema1">
+    </div>
+    <div>
+        <h2>Definir un vector con un conjunto de elementos. Generar un nuevo vector llamando al método filter pasando una función de flecha para definir cuáles rescatar .</h2>
+    </div>
+    <div>
+        <p> Porfavor introduzca su vector de enteros separados por una coma</p>
+        <input type = "text" id = "idProblema2" placeholder = ' Numero1, Numero2, NumeroN '><br>
+        <input type="button" value="Ordenar vector" onclick="filtrar(getVector(idProblema2))">
+    </div>
+    <div id="problema2">
+    </div>
+    <div>
+        <h2>Definir una función de flecha que reciba un valor entero y retorne otro valor entero aleatorio<br>
+            comprendido entre 1 y el valor que llega como parámetro. Asignar dicha función de flecha a una constante para permitir llamarla en sucesivas ocasiones.</h2>
+    </div>
+    <div>
+        <p> Porfavor introduzca los multiples valores para el rango de los numeros alatorios separados por comas.</p>
+        <input type = "text" id = "idProblema3" placeholder = ' Numero1, Numero2, NumeroN '><br>
+        <input type="button" value="Ordenar vector" onclick="mapear(getVector(idProblema3))">
+    </div>
+    <div id="problema3">
+    </div>
+    <script>
+        function ordenar(vector){
+            vector.sort((a, b) => a - b);
+            problema1.innerHTML = "El vector arreglado es :"  + vector;
+        }
+        function getVector(datosUser){
+            let arreglo = datosUser.value;
+            arreglo = arreglo.split(",");
+            return arreglo;
+        }
+        function filtrar(vector){
+            let vectorFiltrado = vector.filter((elemento) => elemento % 2 == 0);
+            problema2.innerHTML = "El vector filtrado inicial es :"  + vector + "<br>" + "El vector filtrado es :"  + vectorFiltrado;
+        }
+        function mapear(vector){
+            let vectorMapeado = vector.map((elemento) => Math.floor(Math.random() * (elemento - 1)) + 1);
+            problema3.innerHTML = "Los limites establecidos son:"  + vector + "<br>" + "Los valores aleatorios respectivamente son :"  + vectorMapeado;
+        }
+    </script>
+</body>
+</html>

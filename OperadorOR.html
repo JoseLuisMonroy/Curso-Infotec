@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador OR</title>
+</head>
+<body>
+    <script>
+        let day, month, year;
+        day = parseInt(prompt("Ingrese el dia"));
+        month = parseInt(prompt("Ingrese el mes en numero"));
+        year = parseInt(prompt("Ingrese el año"));
+        if(month ==1 || month == 2 || month == 3){
+            document.write("El mes es parte del primer trimestre");
+        }else if(month == 4 || month == 5 || month == 6){
+            document.write("El mes es parte del segundo trimestre");
+        }else if(month == 7 || month == 8 || month == 9){
+            document.write("El mes es parte del tercer trimestre");
+        }else{
+            document.write("El mes es parte del cuarto trimestre");
+        }
+    </script>
+</body>
+</html>

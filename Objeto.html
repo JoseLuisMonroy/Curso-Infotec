@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creacion de objetos</title>
+</head>
+<body>
+    <div>
+        <h1>Creacion de un objeto</h1>
+        <p>Crear un objeto que represente los datos de un participante de un juego.</p>
+    </div>
+    <div>
+        <h2>Objeto</h2>
+        <button id="boton" onclick = "crearObjeto()" >crearParticipante</button>
+        <input type="text" id = "Puntos" placeholder = "Puntos">
+        <button id="boton2" onclick = "sumarPuntos(Puntos)" >sumarPuntos</button>
+        <button id = "boton3" onclick = "verificarGanador()">Verificar si gano</button>
+    </div>
+    <div id = "Informacion">
+    </div>
+    <script>
+        let participante;
+        function crearObjeto(){
+            participante = {
+                nombre: `Josue`,
+                cantidadP: 0,
+                sumarPuntos: function(puntos){
+                    this.cantidadP +=  puntos;
+                },
+                verificarGanador: function(){
+                    if(this.cantidadP >= 100){
+                        let mensaje = `El participante ${this.nombre} ha ganado el juego`;
+                        let parrafo7 = document.createElement("p");
+                        parrafo7.innerHTML = mensaje;
+                        Informacion.appendChild(parrafo7);
+                    }else{
+                        let mensaje = `El participante ${this.nombre} no ha ganado el juego`;
+                        let parrafo7 = document.createElement("p");
+                        parrafo7.innerHTML = mensaje;
+                        Informacion.appendChild(parrafo7);
+                    }
+                }
+            }
+            let parrafo = document.createElement("p");
+            let nodoTexto = document.createTextNode("Nombre: " + participante.nombre);
+            parrafo.appendChild(nodoTexto);
+            Informacion.appendChild(parrafo);
+            let parrafo2 = document.createElement("p");
+            let nodoTexto2 = document.createTextNode("Puntos: " + participante.cantidadP);
+            parrafo2.appendChild(nodoTexto2);
+            Informacion.appendChild(parrafo2);
+        }
+        function sumarPuntos(puntos){
+            participante.sumarPuntos(parseInt(puntos.value));
+            let parrafo4 = document.createElement("p");
+            let nodoTexto4 = document.createTextNode("Puntos actualizados: " + participante.cantidadP);
+            parrafo4.appendChild(nodoTexto4);
+            Informacion.appendChild(parrafo4);
+        }
+        function verificarGanador(){
+            participante.verificarGanador();
+        }
+    </script>
+</body>
+</html>
