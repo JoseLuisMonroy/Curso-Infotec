@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zona de pedidosPasteleria Planeta Pastel</title>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a la zona de pedidos de la pasteleria<img class="logo" src="./images/Logo.png" alt="Logo Pasteleria Planeta Pastel" width="200" height="100"/></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href= "./index.html">Inicio</a></li>
+            <li><a href= "#pedidos">Pedidos</a></li>
+            <li><a href= "#Contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <div>
+        <a name="pedidos"></a>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre"><br><br>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Apellido"><br><br>
+            <label for="telefono">Telefono:</label>
+            <input type="number" id="telefono" name="telefono" placeholder="Telefono"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email"><br><br>
+            <label for="direccion">Direccion:</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Direccion"><br><br>
+            <label for="fecha">Fecha de reserva:</label>
+            <input type="date" id="fecha" name="fecha" placeholder="Fecha"><br><br>
+            <laber for="tipo">Tipo de pan:</laber>
+            <select name="tipo" id="tipo">
+                <option value="chocolate">Chocolate</option>
+                <option value="avellanas">Avellanas</option>
+                <option value="vainilla">Vainilla</option>
+                <option value="flan">Flan</option>
+            </select><br><br>
+            <label for="complementos">Complementos:</label>
+            <input type="checkbox" id="complementos" name="complementos" value="letras">Letras<br>
+            <input type="text" id="palabra" name="palabra" placeholder="Ingrese aqui la palabra"><br><br>
+            <label for="velitas">Velitas:</label>
+            <input type="checkbox" id="velitas" name="velitas" value="velitas"><br><br>
+                <input type="radio" id="velitas" name="velitas" value="numero">Numero<br>
+                <input type="number" id="numero" name="numero" placeholder="Ingrese aqui el numero de velitas"><br><br>
+                <input type="radio" id="velitas" name="velitas" value="figura">Figura<br>
+                <input type="radio" id="velitas" name="velitas" value="palitos">Palitos<br><br>
+            <input type="checkbox" id="complementos" name="complementos" value="imagen">Imagen<br>
+            <input type="file" id="imagen" name="imagen" accept="image/*"><br><br>
+            <input type="checkbox" id="complementos" name="complementos" value="fruta">Frutas<br><br>
+            
+            <label for="comentarios">Comentarios:</label>
+            <input type="text" id="comentarios" name="comentarios" placeholder="Comentarios"><br><br>
+            <input type="submit" value="Enviar">
+        </form>
+</body>
