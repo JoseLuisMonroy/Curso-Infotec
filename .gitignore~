@@ -1,0 +1,4 @@
+*.zip
+*.un~
+/.metadata/
+aplication.properties
