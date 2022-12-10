@@ -13,10 +13,10 @@ public class PersonaController {
     @Autowired
     public PersonaService personaService;
     @PutMapping("/guardar")
-    public ResponseEntity<Integer> guardarPersona(@RequestParam("nombre")String nombre,@RequestParam("nombre")String apellidos) {
+    public ResponseEntity<Integer> guardarPersona(@RequestParam("idR")Integer idp, @RequestParam("nombre")String nombre,@RequestParam("apellidos")String apellidos) {
         Integer id = 0;
         try {
-            id = this.personaService.guardarPersona(nombre, apellidos);
+            id = this.personaService.guardarPersona(idp, nombre, apellidos);
         } catch (Exception e) {
             System.out.println("Error");
         }
@@ -29,7 +29,7 @@ public class PersonaController {
     public ResponseEntity<Integer> guardarPersona(@RequestParam DataDTO data) {
         Integer id = 0;
         try {
-            id = this.personaService.guardarPersona(data.getNombre(), data.getApellidos());
+            id = this.personaService.guardarPersona(data.getId(), data.getNombre(), data.getApellidos());
         } catch (Exception e) {
             System.out.println("Error");
         }
