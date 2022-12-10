@@ -1,13 +1,12 @@
 package com.example.springpost.controller;
 
 import com.example.springpost.dto.DataDTO;
+import com.example.springpost.entity.Persona;
 import com.example.springpost.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class PersonaController {
@@ -37,6 +36,10 @@ public class PersonaController {
         if (id == 0) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<Integer>(id, HttpStatus.OK);
+        return new ResponseEntity<>(id, HttpStatus.OK);
+    }
+    @GetMapping("/obtenerPersona/{id}")
+    public ResponseEntity<DataDTO> obtenerPersona (@PathVariable("id") Integer id){
+        return new ResponseEntity<>(new DataDTO(this.personaService.obtenerPorId(id)), HttpStatus.OK);
     }
 }
