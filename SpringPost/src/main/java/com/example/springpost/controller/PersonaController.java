@@ -12,10 +12,10 @@ public class PersonaController {
     @Autowired
     public PersonaService personaService;
     @PutMapping("/guardar")
-    public ResponseEntity<Integer> guardarPersona(@RequestParam("nombre")String nombre,@RequestParam("apellidos")String apellidos) {
+    public ResponseEntity<Integer> guardarPersona(@RequestParam("nombre")String nombre,@RequestParam("apellidos")String apellidos, @RequestParam("direccion_id")Integer direccion_id) {
         Integer id = 0;
         try {
-            id = this.personaService.guardarPersona(nombre, apellidos);
+            id = this.personaService.guardarPersona(nombre, apellidos, direccion_id);
         } catch (Exception e) {
             System.out.println("Error");
         }
@@ -23,19 +23,6 @@ public class PersonaController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return new ResponseEntity<Integer>(id, HttpStatus.OK);
-    }
-    @PutMapping("/guadarDTO")
-    public ResponseEntity<Integer> guardarPersona(@RequestParam DataDTOPersona data) {
-        Integer id = 0;
-        try {
-            id = this.personaService.guardarPersona(data.getNombre(), data.getApellidos());
-        } catch (Exception e) {
-            System.out.println("Error");
-        }
-        if (id == 0) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-        return new ResponseEntity<>(id, HttpStatus.OK);
     }
     @GetMapping("/obtenerPersona/{id}")
     public ResponseEntity<DataDTOPersona> obtenerPersona (@PathVariable("id") Integer id){

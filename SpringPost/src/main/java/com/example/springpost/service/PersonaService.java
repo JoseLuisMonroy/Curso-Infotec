@@ -15,11 +15,12 @@ public class PersonaService {
     public Persona obtenerPorId(Integer id){
         return this.personaRepository.findById(id).get();
     }
-    public Integer guardarPersona(String nombre, String apellidos){
+    public Integer guardarPersona(String nombre, String apellidos, Integer direccion_id){
         Persona persona = new Persona();
         persona.setId(this.getId());
         persona.setNombre(nombre);
         persona.setApellidos(apellidos);
+        persona.setDireccion_id(direccion_id);
         persona = personaRepository.save(persona);
         this.incrementarID();
         return persona.getId();
