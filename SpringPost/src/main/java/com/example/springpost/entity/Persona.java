@@ -15,6 +15,9 @@ public class Persona {
     @Column(name = "apellidos")
     private String apellidos;
 
+    @Column(name = "direccion_id")
+    private Integer direccion_id;
+
 
     public Integer getId() {
         return id;
@@ -38,5 +41,13 @@ public class Persona {
 
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
+    }
+
+    public Integer getDireccion_id() {
+        return direccion_id;
+    }
+
+    public void setDireccion_id(Integer direccion_id) {
+        this.direccion_id = direccion_id;
     }
 }
