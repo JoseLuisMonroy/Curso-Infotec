@@ -12,7 +12,7 @@ public class DireccionController {
     @Autowired
     public DireccionService direccionService;
     @PutMapping("/guardarDireccion")
-    public ResponseEntity<Integer> guardarDireccion(@RequestParam("calle")String calle, @RequestParam("numExt")String numExt, @RequestParam("numInt")String numInt, @RequestParam("cp")Integer cp, @RequestParam("colonia") String colonia, @RequestParam("ciudad")Integer ciudad, @RequestParam("estado")Integer estado){
+    public ResponseEntity<Integer> guardarDireccion(@RequestParam("calle")String calle, @RequestParam("numExt")String numExt, @RequestParam("numInt")String numInt, @RequestParam("cp")Integer cp, @RequestParam("colonia") String colonia, @RequestParam("ciudad")Integer ciudad, @RequestParam("estado")Integer estado)   {
         Integer id = 0;
         try{
             id = this.direccionService.guardarDireccion(calle, numExt, numInt, cp, colonia, ciudad, estado);

@@ -22,7 +22,7 @@ public class PersonaController {
         if (id == 0) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<Integer>(id, HttpStatus.OK);
+        return new ResponseEntity<>(id, HttpStatus.OK);
     }
     @GetMapping("/obtenerPersona/{id}")
     public ResponseEntity<DataDTOPersona> obtenerPersona (@PathVariable("id") Integer id){
