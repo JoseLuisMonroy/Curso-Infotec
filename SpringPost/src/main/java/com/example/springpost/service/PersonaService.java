@@ -15,9 +15,8 @@ public class PersonaService {
     public Persona obtenerPorId(Integer id){
         return this.personaRepository.findById(id).get();
     }
-    public Integer guardarPersona(Integer id, String nombre, String apellidos){
+    public Integer guardarPersona(String nombre, String apellidos){
         Persona persona = new Persona();
-        persona.setId(id);
         persona.setId(this.getId());
         persona.setNombre(nombre);
         persona.setApellidos(apellidos);
