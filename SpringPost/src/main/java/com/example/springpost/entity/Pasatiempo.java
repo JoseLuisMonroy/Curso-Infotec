@@ -6,8 +6,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "")
-public class Pasatiempos {
+@Table(name = "pasatiempo", schema = "public")
+public class Pasatiempo {
     @Id
     private Integer id;
     @Column(name = "nombre")
