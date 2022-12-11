@@ -13,7 +13,7 @@ public class PasatiempoController {
     @Autowired
     public PasatiempoService pasatiempoService;
 
-    @PutMapping("/guardarPasatiempo")
+    @PostMapping("/guardarPasatiempo")
     public ResponseEntity<Integer> guardarPasatiempo(@RequestParam("id_Persona")Integer id_persona,@RequestParam("nombre")String nombre, @RequestParam("pasatiempo")Integer pasatiempo){
         Integer id = 0;
         try {
@@ -29,5 +29,15 @@ public class PasatiempoController {
     @GetMapping("/obtenerPasatiempo/{id}")
     public ResponseEntity<DataDTOPasatiempo> obtenerPasatiempo(@PathVariable("id")Integer id){
         return new ResponseEntity<>(new DataDTOPasatiempo(this.pasatiempoService.obtenerPorID(id)), HttpStatus.OK);
+    }
+    @DeleteMapping("/eliminarPasatiempo/{id}")
+    public ResponseEntity<Void> eliminarPasatiempo(@PathVariable("id")Integer id){
+        this.pasatiempoService.eliminarPasatiempo(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    @PutMapping ("/actualizarPasatiempo")
+    public ResponseEntity<Void> actualizarPasatiempo(@RequestParam("id")Integer id, @RequestParam("nombre")String nombre, @RequestParam("pasatiempo")Integer pasatiempo){
+        this.pasatiempoService.actualizarPasatiempo(id, nombre, pasatiempo);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

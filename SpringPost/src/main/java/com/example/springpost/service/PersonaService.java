@@ -26,6 +26,17 @@ public class PersonaService {
         return persona.getId();
     }
 
+    public void eliminarPersona(Integer id){
+        this.personaRepository.deleteById(id);
+    }
+    public void actualizarPersona(Integer id, String nombre, String apellidos, Integer direccion_id){
+        Persona persona = this.obtenerPorId(id);
+        persona.setNombre(nombre);
+        persona.setApellidos(apellidos);
+        persona.setDireccion_id(direccion_id);
+        personaRepository.save(persona);
+    }
+
     public Integer getId() {
         return id;
     }

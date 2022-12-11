@@ -25,6 +25,16 @@ public class PasatiempoService {
         this.incrementarID();
         return  pasatiempo.getId();
     }
+    public void eliminarPasatiempo(Integer id){
+        this.pasatiempoRepository.deleteById(id);
+    }
+
+    public void actualizarPasatiempo(Integer id, String nombre, Integer pasatiempos){
+        Pasatiempo pasatiempo = this.obtenerPorID(id);
+        pasatiempo.setNombre(nombre);
+        pasatiempo.setPasatiempo(pasatiempos);
+        pasatiempoRepository.save(pasatiempo);
+    }
 
     public Integer getId() {
         return id;

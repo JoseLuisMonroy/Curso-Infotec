@@ -29,6 +29,20 @@ public class DireccionService {
         this.incrementarID();
         return direccion.getId();
     }
+    public void eliminarDireccion(Integer id){
+        this.direccionRepository.deleteById(id);
+    }
+    public void actualizarDireccion(Integer id, String calle, String numExt, String numInt, Integer cp, String colonia, Integer ciudad, Integer estado){
+        Direccion direccion = this.obtenerPorId(id);
+        direccion.setCalle(calle);
+        direccion.setNumExt(numExt);
+        direccion.setNumInt(numInt);
+        direccion.setCp(cp);
+        direccion.setColonia(colonia);
+        direccion.setCiudad(ciudad);
+        direccion.setEstado(estado);
+        direccionRepository.save(direccion);
+    }
 
     public Integer getId() {
         return id;
