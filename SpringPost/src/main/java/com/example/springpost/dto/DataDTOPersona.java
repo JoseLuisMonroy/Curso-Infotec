@@ -2,15 +2,15 @@ package com.example.springpost.dto;
 
 import com.example.springpost.entity.Persona;
 
-public class DataDTO {
+public class DataDTOPersona {
     public String nombre;
     public String apellidos;
     public Integer id;
 
-    public DataDTO(){
+    public DataDTOPersona(){
 
     }
-    public DataDTO(Persona persona){
+    public DataDTOPersona(Persona persona){
         this.id = persona.getId();
         this.nombre = persona.getNombre();
         this.apellidos = persona.getApellidos();

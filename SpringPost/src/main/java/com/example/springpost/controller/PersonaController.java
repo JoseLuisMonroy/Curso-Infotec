@@ -1,7 +1,6 @@
 package com.example.springpost.controller;
 
-import com.example.springpost.dto.DataDTO;
-import com.example.springpost.entity.Persona;
+import com.example.springpost.dto.DataDTOPersona;
 import com.example.springpost.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,7 +25,7 @@ public class PersonaController {
         return new ResponseEntity<Integer>(id, HttpStatus.OK);
     }
     @PutMapping("/guadarDTO")
-    public ResponseEntity<Integer> guardarPersona(@RequestParam DataDTO data) {
+    public ResponseEntity<Integer> guardarPersona(@RequestParam DataDTOPersona data) {
         Integer id = 0;
         try {
             id = this.personaService.guardarPersona(data.getNombre(), data.getApellidos());
@@ -39,7 +38,7 @@ public class PersonaController {
         return new ResponseEntity<>(id, HttpStatus.OK);
     }
     @GetMapping("/obtenerPersona/{id}")
-    public ResponseEntity<DataDTO> obtenerPersona (@PathVariable("id") Integer id){
-        return new ResponseEntity<>(new DataDTO(this.personaService.obtenerPorId(id)), HttpStatus.OK);
+    public ResponseEntity<DataDTOPersona> obtenerPersona (@PathVariable("id") Integer id){
+        return new ResponseEntity<>(new DataDTOPersona(this.personaService.obtenerPorId(id)), HttpStatus.OK);
     }
 }
