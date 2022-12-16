@@ -1,6 +1,0 @@
-casa house
-perro dog
-gato cat
-hola hello
-computadora computer
-adios goodbye
