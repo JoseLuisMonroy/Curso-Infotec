@@ -3,3 +3,5 @@
 /.metadata/
 application.properties
 *.class
+node_modules/
+.vscode/
