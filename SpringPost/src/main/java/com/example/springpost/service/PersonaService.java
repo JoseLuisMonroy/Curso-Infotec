@@ -2,6 +2,7 @@ package com.example.springpost.service;
 
 import com.example.springpost.entity.Persona;
 import com.example.springpost.repository.PersonaRepository;
+import jakarta.persistence.ManyToMany;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -36,6 +37,8 @@ public class PersonaService {
         persona.setDireccion_id(direccion_id);
         personaRepository.save(persona);
     }
+
+    @ManyToMany
 
     public Integer getId() {
         return id;

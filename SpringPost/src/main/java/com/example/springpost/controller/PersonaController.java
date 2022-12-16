@@ -38,4 +38,5 @@ public class PersonaController {
         this.personaService.actualizarPersona(id, nombre, apellidos, direccion_id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
 }
