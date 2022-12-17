@@ -6,5 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'proyecto001';
+  nombre  = 'Jose Monroy';
+  edad = 19;
+  mail = `jkskjsjk@gmail.com`;
+  sueldos = [1893, 2309, 1230];
+  activo = true;
+  
+  esActivo(){
+    if (this.activo){
+      return `Es un trabajador activo`;
+    }else{
+      return `Es un trabajador inactivo`;
+    }
+  }
+
+  ultimos3Sueldos(){
+    let suma = 0;
+    for (let i = 0; i < this.sueldos.length; i++){
+      suma += this.sueldos[i];
+    }
+    return suma;
+  }
 }
