@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ArticulosService } from './articulos.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'proyecto005';
+  articulos: any;
+  constructor(private articulosServicio: ArticulosService) {}
+  ngOnInit() {
+    this.articulosServicio.getArticulos().subscribe((data: {}) => {
+      this.articulos = data;
+    });
+  }
+
 }
