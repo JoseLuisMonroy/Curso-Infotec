@@ -7,18 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class JuegoDadosComponent implements OnInit {
-  valor1: string = "";
-  valor2: string = "";
-  valor3: string = "";
+  valor1: number;
+  valor2: number;
+  valor3: number;
+
   constructor() { 
     this.valor1 = this.valorAleatorio();
     this.valor2 = this.valorAleatorio();
     this.valor3 = this.valorAleatorio();
   }
 
-  valorAleatorio(): string {
-    let valor = Math.floor(Math.random() * 6) + 1;
-    return valor.toString();
+  valorAleatorio() {
+    return Math.trunc(Math.random() * 6) + 1;
   }
 
   lanzar(): void {
