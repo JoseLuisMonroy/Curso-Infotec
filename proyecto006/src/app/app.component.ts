@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   nombre = "Jose Monroy";
-  sueldo = 1000.50;
+  saldo = 1000.50;
   dias = [`domingo`, `lunes`, `martes`, `miercoles`, `jueves`, `viernes`, `sabado`];
   articulos = [
     { codigo: 1, descripcion: `Arroz`, precio: 10.50 },
