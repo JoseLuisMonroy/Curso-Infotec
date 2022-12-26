@@ -12,3 +12,21 @@ class PilaGenerica<T> {
         }
     }
 }
+
+let pilaNumeros = new PilaGenerica<number>();
+pilaNumeros.push(32);
+pilaNumeros.push(45);
+pilaNumeros.push(67);
+pilaNumeros.push(89);
+console.log(pilaNumeros.pop());
+console.log(pilaNumeros.pop());
+console.log(pilaNumeros.pop());
+console.log(pilaNumeros.pop());
+
+let pilaStrings = new PilaGenerica<string>();
+pilaStrings.push("Hola");
+pilaStrings.push("Mundo");
+pilaStrings.push("!");
+console.log(pilaStrings.pop());
+console.log(pilaStrings.pop());
+console.log(pilaStrings.pop());
