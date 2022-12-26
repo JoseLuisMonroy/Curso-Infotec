@@ -1,31 +1,14 @@
-class PilaEnteros {
-    private vector: number[] = [];
-
-    public insertar (elemento: number): void {
-        this.vector.push(elemento);
+class PilaGenerica<T> {
+    private pila: T[] = [];
+    push(elemento: T) {
+        this.pila.push(elemento);
     }
-
-    public extraer () {
-        if (this.vector.length > 0) {
-            return this.vector.pop();
-        } else {
-            return null;
+    pop(): T | undefined {
+        if (this.pila.length > 0) {
+            return this.pila.pop();
+        }
+        else {
+            throw new Error("No hay elementos en la pila");
         }
     }
 }
-
-class PilaStrings {
-    private vector: string[] = [];
-
-    public insertar (elemento: string): void {
-        this.vector.push(elemento);
-    }
-
-    public extraer () {
-        if (this.vector.length > 0) {
-            return this.vector.pop();
-        } else {
-            return null;
-        }
-    }
-}   
