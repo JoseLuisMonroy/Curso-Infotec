@@ -1,0 +1,38 @@
+<div>
+  <h1>Administracion de productos</h1>
+    <table border="1" *ngIf="hayArticulos(); else sinArticulos" >
+      <tr>
+        <td>Codigo</td>
+        <td>Descripcion</td>
+        <td>Precio</td>
+        <td>Borrar</td>
+        <td>Seleccionar</td>
+      </tr>
+      <tr *ngFor="let art of articulos " >
+        <td>{{art.codigo}}</td>
+        <td>{{art.descripcion}}</td>
+        <td>{{art.precio}}</td>
+        <td><button (click)="borrarArticulo(art.codigo )" >Borrar?</button></td>
+        <td><button (click)="seleccionarArticulo(art.codigo)">Seleccionar</button></td>
+      </tr>
+    </table>
+    <ng-template #sinArticulos>
+      <p>No hay articulos</p>
+    </ng-template>
+    <div>
+      <p>
+        Codigo: <input type="number"  [(ngModel)]= "art.codigo" />
+      </p>
+      <p>
+        Descripcion: <input type="text" [(ngModel)] = "art.descripcion" />
+      </p>
+      <p>
+        Precio: <input type="number" [(ngModel)] = "art.precio" />
+      </p>
+      <p>
+        <button (click)="agregarArticulo()">Agregar</button>
+        <button (click)="modificarArticulo()">Modificar</button>
+      </p>
+    </div>
+
+</div>

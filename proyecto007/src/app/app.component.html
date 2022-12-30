@@ -1,0 +1,18 @@
+<h1>Numeros en</h1>
+<ul>
+  <li *ngFor="let numero of vector">
+    {{numero | letras}}
+  </li>
+</ul>
+<h1>Numeros en Ingles</h1>
+<ul>
+  <li *ngFor="let numero of vector">
+    {{numero | letras: 'ingles'}}
+  </li>
+</ul>
+<h1>Numeros en Portugues</h1>
+<ul>
+  <li *ngFor="let numero of vector">
+    {{numero | letras: 'portugues'}}
+  </li>
+</ul>

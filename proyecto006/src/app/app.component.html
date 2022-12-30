@@ -1,0 +1,11 @@
+<p>Nombre del cliente: {{nombre}} </p>
+<p>Nombre del cliente en mayúsculas: {{nombre | uppercase}} </p>
+<p>Nombre del cliente en minúsculas: {{nombre | lowercase}} </p>
+<p>Saldo: {{saldo | currency: '$'}} </p>
+<p>Dias laborales: {{dias | slice:1:6}} </p>
+<p>
+  {{articulos | json}}
+</p>
+<p>
+  Fecha Actual: {{fecha | date: 'dd/MM/yyyy'}}
+</p>
